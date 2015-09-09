@@ -42,6 +42,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'bbchung/clighter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'Chiel92/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
