@@ -29,20 +29,21 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
+" <c-p> to search a file quickly
 Plugin 'kien/ctrlp.vim'
+" lightweight powerline
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'scrooloose/syntastic'
 Plugin 'ajh17/Spacegray.vim'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" cs"' to change surround " to '
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'bbchung/clighter'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'Chiel92/vim-autoformat'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+" :SaveSession and :OpenSession to manage workspace
+Plugin 'xolox/vim-session'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,7 +71,7 @@ if has('gui_running')
 else
     set background=dark
 endif
-colorscheme spacegray
+colorscheme Tomorrow-Night
 syntax enable
 
 " Indent
@@ -128,4 +129,10 @@ map <silent> <leader>t :NERDTreeFocus<CR>
 " autopairs
 let g:AutoPairsMultilineClose=0
 let g:AutoPairsFlyMode=0
+
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
