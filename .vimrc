@@ -26,6 +26,7 @@ Plugin 'gmarik/Vundle.vim'
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 Plugin 'scrooloose/nerdtree'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
@@ -37,12 +38,12 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'scrooloose/syntastic'
 Plugin 'ajh17/Spacegray.vim'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
 " cs"' to change surround " to '
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " :SaveSession and :OpenSession to manage workspace
+Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 
 " All of your Plugins must be added before the following line
@@ -99,6 +100,9 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=marker
 
+" Clipboard
+set clipboard=unnamed
+
 " Movement
 nnoremap j gj
 nnoremap k gk
@@ -125,6 +129,9 @@ nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
 " NERDTree
 map <silent> <leader>t :NERDTreeFocus<CR>
+" Open nerdtree on vim starting without arg
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " autopairs
 let g:AutoPairsMultilineClose=0
@@ -135,4 +142,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" session
+let g:session_autosave = 'no'
 
