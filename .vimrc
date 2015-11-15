@@ -29,6 +29,7 @@ Plugin 'scrooloose/nerdtree'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'mattn/emmet-vim'
 " <c-p> to search a file quickly
 Plugin 'kien/ctrlp.vim'
