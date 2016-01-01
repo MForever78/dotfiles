@@ -1,68 +1,28 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-Plugin 'scrooloose/nerdtree'
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'mattn/emmet-vim'
+" Global defaults
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'mattn/emmet-vim'
 " <c-p> to search a file quickly
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " lightweight powerline
-Plugin 'bling/vim-airline'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'scrooloose/syntastic'
-Plugin 'ajh17/Spacegray.vim'
+Plug 'bling/vim-airline'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'gabrielelana/vim-markdown'
+Plug 'scrooloose/syntastic'
 " cs"' to change surround " to '
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'morhetz/gruvbox'
 " :SaveSession and :OpenSession to manage workspace
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-"filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" Font
+call plug#end()
 
 " Color scheme
 set t_Co=256
@@ -73,7 +33,7 @@ if has('gui_running')
 else
     set background=dark
 endif
-colorscheme Tomorrow-Night
+colorscheme gruvbox
 syntax enable
 
 " Indent
