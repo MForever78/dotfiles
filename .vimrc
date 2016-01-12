@@ -24,6 +24,9 @@ Plug 'xolox/vim-session'
 
 call plug#end()
 
+" Mouse support
+set mouse=a
+
 " Color scheme
 set t_Co=256
 if has('gui_running')
