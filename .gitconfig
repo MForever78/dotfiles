@@ -1,0 +1,16 @@
+[push]
+	default = matching
+[user]
+	name = MForever78
+	email = shunjian1128@gmail.com
+[core]
+	excludesfile = /Users/MForever78/.gitignore_global
+[init]
+	templatedir = /Users/MForever78/.git-templates
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[http]
