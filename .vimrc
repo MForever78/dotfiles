@@ -4,8 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'mattn/emmet-vim'
 " <c-p> to search a file quickly
 Plug 'kien/ctrlp.vim'
@@ -13,7 +11,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'gabrielelana/vim-markdown'
-Plug 'scrooloose/syntastic'
 " cs"' to change surround " to '
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -22,41 +19,31 @@ Plug 'morhetz/gruvbox'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
 call plug#end()
 
-" Mouse support
-set mouse=a
+" enabel true color
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-" Color scheme
-set t_Co=256
-if has('gui_running')
-    set background=dark
-    set guifont=M+\ 1mn\ light:h16
-    set guioptions-=T
-else
-    set background=dark
-endif
+" set color scheme
 colorscheme gruvbox
-syntax enable
+set background=dark
 
 " Indent
-set autoindent
 set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set smarttab
 
 " UI Config
 set number
 set cursorline
-set wildmenu
 set showmatch
-
-" Searching
-set incsearch
-set hlsearch
 
 " Folding
 set foldenable
@@ -64,15 +51,11 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=marker
 
-" Clipboard
-set clipboard=unnamed
-
 " Movement
 nnoremap j gj
 nnoremap k gk
 
 " Powerline
-set laststatus=2
 let g:Powerline_symbols='fancy'
 
 " Remove Scrollbar
@@ -110,3 +93,5 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " session
 let g:session_autosave = 'no'
 
+" deoplete autostart
+let g:deoplete#enable_at_startup = 1
