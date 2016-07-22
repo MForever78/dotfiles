@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " Global defaults
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 " <c-p> to search a file quickly
@@ -23,6 +24,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'zchee/deoplete-clang'
 
 call plug#end()
 
@@ -50,6 +52,9 @@ set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=marker
+
+" autoreload
+set autoread
 
 " Movement
 nnoremap j gj
@@ -93,5 +98,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " session
 let g:session_autosave = 'no'
 
-" deoplete autostart
+" deoplete options
 let g:deoplete#enable_at_startup = 1
+inoremap <silent><expr> <Tab>
+            \ pumvisible() ? "\<C-n>" : "<Tab>"
+
+" deoplete-clang options
+let g:deoplete#sources#clang#libclang_path = "/usr/local/opt/llvm/lib/libclang.dylib"
+let g:deoplete#sources#clang#clang_header = "/usr/local/opt/llvm/include/"
+
+" tagbar options
+nnoremap <silent> <leader>o :TagbarToggle<CR>
