@@ -19,12 +19,15 @@ Plug 'morhetz/gruvbox'
 " :SaveSession and :OpenSession to manage workspace
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+" golang
+Plug 'fatih/vim-go'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 
 call plug#end()
 
