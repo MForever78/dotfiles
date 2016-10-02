@@ -21,6 +21,8 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 " golang
 Plug 'fatih/vim-go'
+" auto-formatter
+Plug 'Chiel92/vim-autoformat'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -109,6 +111,9 @@ inoremap <silent><expr> <Tab>
 " deoplete-clang options
 let g:deoplete#sources#clang#libclang_path = "/usr/local/opt/llvm/lib/libclang.dylib"
 let g:deoplete#sources#clang#clang_header = "/usr/local/opt/llvm/include/"
+
+" auto-formatter options
+au BufWrite * :Autoformat
 
 " tagbar options
 nnoremap <silent> <leader>o :TagbarToggle<CR>
