@@ -4,8 +4,5 @@
 	name = MForever78
 	email = shunjian1128@gmail.com
 [core]
-	excludesfile = /Users/MForever78/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
