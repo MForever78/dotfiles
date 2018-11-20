@@ -16,20 +16,16 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
-" :SaveSession and :OpenSession to manage workspace
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 " golang
 Plug 'fatih/vim-go'
 " auto-formatter
 Plug 'Chiel92/vim-autoformat'
-
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'zchee/deoplete-clang'
-Plug 'zchee/deoplete-go', { 'do': 'make' }
+" Jedi
+" Plug 'davidhalter/jedi-vim'
+" Lint
+Plug 'w0rp/ale'
+" YouCompleteMe
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -113,7 +109,12 @@ let g:deoplete#sources#clang#libclang_path = "/usr/local/opt/llvm/lib/libclang.d
 let g:deoplete#sources#clang#clang_header = "/usr/local/opt/llvm/include/"
 
 " auto-formatter options
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 
 " tagbar options
 nnoremap <silent> <leader>o :TagbarToggle<CR>
+
+" Linter
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
