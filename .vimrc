@@ -23,9 +23,10 @@ Plug 'Chiel92/vim-autoformat'
 " Jedi
 " Plug 'davidhalter/jedi-vim'
 " Lint
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 " YouCompleteMe
 Plug 'Valloric/YouCompleteMe'
+Plug 'arakashic/chromatica.nvim'
 
 call plug#end()
 
@@ -118,3 +119,10 @@ nnoremap <silent> <leader>o :TagbarToggle<CR>
 let g:ale_linters = {
 \   'python': ['flake8'],
 \}
+
+" Clang
+let g:chromatica#libclang_path='/usr/local/opt/llvm/lib'
+let g:chromatica#enable_at_startup=1
+
+"YouCompleteMe
+let g:ycm_show_diagnostics_ui = 0
