@@ -82,6 +82,7 @@ nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
 " NERDTree
 map <silent> <leader>t :NERDTreeFocus<CR>
+let NERDTreeIgnore = ['\.pyc$']
 " Open nerdtree on vim starting without arg
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -94,19 +95,7 @@ let g:AutoPairsFlyMode=0
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
-" session
-let g:session_autosave = 'no'
-
-" deoplete options
-let g:deoplete#enable_at_startup = 1
-inoremap <silent><expr> <Tab>
-            \ pumvisible() ? "\<C-n>" : "<Tab>"
-
-" deoplete-clang options
-let g:deoplete#sources#clang#libclang_path = "/usr/local/opt/llvm/lib/libclang.dylib"
-let g:deoplete#sources#clang#clang_header = "/usr/local/opt/llvm/include/"
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
 
 " auto-formatter options
 " au BufWrite * :Autoformat
