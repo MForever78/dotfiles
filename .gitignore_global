@@ -115,10 +115,6 @@ sftp-config.json
 # YouCompleteMe
 .ycm_extra_conf.py
 
-
-# Created by https://www.gitignore.io/api/xcode
-# Edit at https://www.gitignore.io/?templates=xcode
-
 ### Xcode ###
 # Xcode
 #
@@ -208,4 +204,6 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/xcode
+# Clang complete
+.clang
+compile_commands.json
