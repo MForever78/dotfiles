@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 " <c-p> to search a file quickly
 Plug 'kien/ctrlp.vim'
@@ -20,18 +19,14 @@ Plug 'morhetz/gruvbox'
 Plug 'fatih/vim-go'
 " auto-formatter
 Plug 'Chiel92/vim-autoformat'
-" Jedi
-" Plug 'davidhalter/jedi-vim'
 " Lint
-" Plug 'w0rp/ale'
-" YouCompleteMe
-Plug 'Valloric/YouCompleteMe'
+Plug 'w0rp/ale'
 Plug 'arakashic/chromatica.nvim'
+" Completer
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-clang'
 
 call plug#end()
-
-" enabel true color
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " set color scheme
 colorscheme gruvbox
@@ -109,9 +104,15 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \}
 
-" Clang
+" Chromatica
 let g:chromatica#libclang_path='/usr/local/opt/llvm/lib'
 let g:chromatica#enable_at_startup=1
 
-"YouCompleteMe
-let g:ycm_show_diagnostics_ui = 0
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#libclang_path = '/usr/local/opt/llvm/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header = '/usr/local/opt/llvm/include'
+set completeopt-=preview
+
+" ale linter
+let g:ale_linters = {'objc': []}
