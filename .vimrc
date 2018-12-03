@@ -49,9 +49,9 @@ set showmatch
 
 " Folding
 set foldenable
-set foldlevelstart=10
+set foldlevelstart=1
 set foldnestmax=10
-set foldmethod=marker
+set foldmethod=indent
 
 " autoreload
 set autoread
