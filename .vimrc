@@ -19,6 +19,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 " golang
 Plug 'fatih/vim-go'
+" rust
+Plug 'rust-lang/rust.vim'
 " auto-formatter
 Plug 'Chiel92/vim-autoformat'
 " Lint
