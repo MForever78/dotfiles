@@ -29,7 +29,7 @@ Plug 'arakashic/chromatica.nvim'
 " Completer
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
-Plug 'townk/vim-autoclose'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
@@ -44,6 +44,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" mouse support
+set mouse=a
+
 " UI Config
 set number
 set cursorline
@@ -51,7 +54,7 @@ set showmatch
 
 " Folding
 set foldenable
-set foldlevelstart=1
+set foldlevelstart=0
 set foldnestmax=10
 set foldmethod=indent
 
