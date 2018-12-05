@@ -24,11 +24,12 @@ Plug 'rust-lang/rust.vim'
 " auto-formatter
 Plug 'Chiel92/vim-autoformat'
 " Lint
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'arakashic/chromatica.nvim'
 " Completer
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-jedi'
 Plug 'Raimondi/delimitMate'
 
 call plug#end()
