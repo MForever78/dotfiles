@@ -7,6 +7,8 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 " <c-p> to search a file quickly
 Plug 'kien/ctrlp.vim'
+" plist support
+Plug 'darfink/vim-plist'
 " lightweight powerline
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
@@ -23,13 +25,10 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 " auto-formatter
 Plug 'Chiel92/vim-autoformat'
-" Lint
-" Plug 'w0rp/ale'
+" Source hightlight
 Plug 'arakashic/chromatica.nvim'
 " Completer
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
-Plug 'zchee/deoplete-jedi'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'Raimondi/delimitMate'
 
 call plug#end()
@@ -160,4 +159,31 @@ let g:tagbar_type_objc = {
         \ 'enumeration'    : 'e'
     \ }
 \ }
+
+" set plist extensions
+au BufRead,BufNewFile *.pr set filetype=xml
+
+" coc
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
 
